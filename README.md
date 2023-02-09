@@ -1,3 +1,4 @@
 # Coin-Int-Project
 Project on Job-Portral
-27/11/2022 --> Till Now --> Registration and Login Page completed
+09/2/23 -->Register and Login Page
+
