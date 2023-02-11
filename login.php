@@ -167,19 +167,19 @@
         </div>
         <h2>Login</h2>
         <h3>Welcome Back Manvi</h3>
-        <form  class="login-form">
+        <form  class="login-form" method="POST">
             <div class="textbox">
-                <input type="email" placeholder="Username" />
+                <input type="email" placeholder="Username" name="username" />
                 <span><i class="fa-solid fa-user"></i>
                 </span>
             </div>
             <div class="textbox">
-                <input type="email" placeholder="Password" />
+                <input type="password" placeholder="Password" name="password"/>
                 <span>
                 <i class="fa-regular fa-lock"></i>
                 </span>
             </div>
-            <button type="Submit">LOGIN</button>
+            <button type="submit" name="Login">LOGIN</button>
             <a href="/">Forgot your Credentials? </a>
         </form>
     </div>  
