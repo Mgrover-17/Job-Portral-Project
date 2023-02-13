@@ -6,58 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
-        
-        .navbar{
-    overflow: hidden;
-    background: color #333;
-    position:fixed;
-    top:0;
-    width:100%;
-  }
+  img{
+  background-image: linear-gradient(
+            rgba(4, 9, 30, 0.7),
+            rgba(4, 9, 30, 0.7)
+          ),
+          url("career1.png");
+        }
+.top-left {
+  position: absolute;
+  top:150px;
+  left: 60px;
+  color:white;
+}
+
 body{
-    background-image:url("career.jpg");
-    
+    background-repeat:no-repeat;
   }
     </style>
     <title>Career</title>
     
 </head>
 <body>
-
-    <div class="container-fluid">
-
-    <nav class="navbar navbar-expand-lg bg-light" style="position:fixed">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
+<div>
+  <img  alt="" width="1530" height="350">
+  <div class="top-left">
+    <h1> Jobs Portral</h1>
+    <h4>Best Jobs available matching your skills</h4>
   </div>
-</nav>
 
-
-    </div>
+  <div class="card m-4" style="width: 28rem;">
+  <div class="card-body">
+    <h5 class="card-title">Software Developer</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Microsoft</h6>
+    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, quis nam eum vitae quia totam dolorem alias, ab doloribus rerum magni eaque delectus iusto id? Hic ea ipsum nulla fugiat.</p>
+    <h6><b>Skills Required :</b> HTML,CSS,JavaScript and React</h6>
+    <h6><b>Job Location :</b> Delhi</h6>
+    <h6><b>CTC :</b> 8LPA</h6>
     
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </div>
+</div>
 
+  
+</div>
 </body>
 </html>
