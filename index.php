@@ -25,7 +25,7 @@ echo "New Job Posted";
 }
 
 
-$conn->close();
+//$conn->close();
 
 ?>
 <!-- Page content -->
@@ -75,7 +75,7 @@ $conn->close();
       <th scope="col">CTC</th>
     </tr>
   </thead>
-  <tbody>
+  <!-- <tbody>
     <tr>
       <th scope="row">1</th>
       <td>TCS</td>
@@ -88,7 +88,26 @@ $conn->close();
       <td>Digital Marketing</td>
       <td>12LPA</td>
     </tr>
-  </tbody>
+  </tbody> -->
+  <?php 
+        $sql="Select cname,position,CTC FROM jobs";
+        $result = mysqli_query($conn,$sql);
+        $i=0;
+
+        if($result->num_rows>0){
+          // Outputing data of each row
+          while($rows=$result->fetch_assoc()){
+        echo "
+        <tbody>
+            <tr>
+              <td>".++$i."</td>
+              <td>".$rows['cname']."</td>
+              <td>".$rows['position']."</td>
+              <td>".$rows['CTC']."</td>
+            </tr>";
+            }}
+        else{
+          echo"";}?>
 </table>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

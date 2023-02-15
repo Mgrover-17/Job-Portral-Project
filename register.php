@@ -133,7 +133,7 @@ mysqli_close($conn);
         </div>
         <br><br>
         <form method="POST" action="">
-          <p class='input-container'><i class="fas fa-user user input-icons"></i><input class=signup-inputs type="text" placeholder="Name" required name="username"></p>
+          <p class='input-container'><i class="fas fa-user user input-icons"></i><input class=signup-inputs type="text" placeholder="Username" required name="username"></p>
           <!-- <p class='input-container'><i class="fas fa-envelope envelope input-icons"></i><input class=signup-inputs type="email" placeholder="Email" name="email" required></p> -->
           <p class='input-container'><i class="fas fa-phone input-icons"></i><input class=signup-inputs type="tel" placeholder="Contact Number" required name="contact"></p>
           <p class='input-container'><i class="fas fa-key key input-icons"></i><input class=signup-inputs type="password" placeholder="Password" required name="password"></p>
