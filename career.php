@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@ body{
   }
     </style>
     <title>Career</title>
-    
+ 
 </head>
 <body>
 <div>
@@ -53,33 +54,35 @@ body{
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="POST">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Name:</label>
             <input type="text" class="form-control"  name="Name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Applying For:</label>
-            <textarea class="form-control" name="apply"></textarea>
+            <textarea class="form-control" name="applyfor"></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Qualification:</label>
-            <input class="form-control" name="Qualification" ></input>
+            <input class="form-control" name="qualification" ></input>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Year Passout:</label>
             <input class="form-control" name="Year_passout" ></input>
           </div>
-        </form>
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Apply</button>
+        <button type="submit" class="btn btn-primary" name="apply">Apply</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
+<div class="row">
 <?php 
         require_once "config.php";
         $sql="SELECT cname,position,Jdesc,skills,CTC FROM jobs";
@@ -87,7 +90,9 @@ body{
         if($result->num_rows>0){
           while($rows=$result->fetch_assoc()){
             echo'
-            <div class="card-body">
+            <div class="col-sm-6" >
+            <div class = "card" style="width: 16rem;">
+            <div class="card-body " >
             <h5 class="card-title">'.$rows['position'].'</h5>
             <h6 class="card-subtitle mb-2 text-muted">'.$rows['cname'].'</h6>
             <p class="card-text">'.$rows['Jdesc'].'</p>
@@ -95,16 +100,33 @@ body{
             <h6><b>CTC : </b>'.$rows['CTC'].'</h6>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Apply Now</button>
             </div>
-            </div>';
-
-          }}?>
-
-        </div>  
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  
+            </div>
+            </div>';          }}
+          
+          // Apllying for Job
+          if(isset($_POST['apply'])){
+            $Name=$_POST['Name'];
+            $qualification=$_POST['qualification'];
+            $applyfor = $_POST['applyfor'];
+            $Year_passout=$_POST['Year_passout'];
+            
+            $stmt = $conn->prepare("INSERT INTO `jobapplicants`(`Name`, `qualification`,`applyfor`, `Year_passout`) VALUES (?,?,?,?)");
+            $stmt->bind_param("ssss",$Name,$qualification,$applyfor,$Year_passout);
+            $stmt->execute();
+            
+            // $stmt = "INSERT INTO `jobapplicants`(`Name`, `qualification`, `applyfor`, `Year_passout`) VALUES ('$Name',$qualification','$applyfor','$Year_passout')"
+            // mysqli_query($conn,$stmt);
+            echo "Apply for Job successfully";
+          }
+          ?>
+          </div>
+          </div>
+          </div>  
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+          
 
   
 </div>

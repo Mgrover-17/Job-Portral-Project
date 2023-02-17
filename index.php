@@ -93,7 +93,6 @@ echo "New Job Posted";
         $sql="Select cname,position,CTC FROM jobs";
         $result = mysqli_query($conn,$sql);
         $i=0;
-
         if($result->num_rows>0){
           // Outputing data of each row
           while($rows=$result->fetch_assoc()){

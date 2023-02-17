@@ -218,7 +218,19 @@ if(empty($err))
             <img src="user.jpeg" />
         </div>
         <h2>Login</h2>
-        <h3>Welcome Back Manvi</h3>
+
+    <!-- Yaha tohdi c gadbad hai yaha problem horri bss iska samjh nahi arra ki kesse krenga name print according to regiseter and kon login kra -->
+        <?php
+        $sql="Select name FROM users";
+        $result = mysqli_query($conn,$sql);
+
+        if($result->num_rows>0){
+            while($rows=$result->fetch_assoc()){
+          echo '
+        <h3>Welcome '.$rows['name'].'</h3> ';
+            }}
+        ?>
+        
         <form  class="login-form" method="POST">
             <div class="textbox">
                 <input type="email" placeholder="Username" name="username" />

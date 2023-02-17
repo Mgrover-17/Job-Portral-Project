@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
-$username = $password = $confirm_password = $contact = "" ;
-$username_err = $password_err = $confirm_password_err = $contact_err ="";
+$name = $username = $password = $confirm_password = $contact = "" ;
+$name_err = $username_err = $password_err = $confirm_password_err = $contact_err ="";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -39,6 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     mysqli_stmt_close($stmt);
 
 
+
+if(empty(trim($_POST['name']))){
+    $name_err = "Name Can't be blank";
+}
+else{
+  $name = trim($_POST['name']);
+}
+
 // Check for password
 if(empty(trim($_POST['password']))){
     $password_err = "Password cannot be blank";
@@ -66,15 +74,17 @@ if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
 
 
 // If there were no errors, go ahead and insert into the database
-if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($contact_err))
+if(empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($contact_err))
 {
-    $sql = "INSERT INTO users (username, password,contact) VALUES (?, ?,?)";
+    $sql = "INSERT INTO users (name,username, password,contact) VALUES (?,?,?,?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
-        mysqli_stmt_bind_param($stmt, "ssi", $param_username, $param_password,$param_contact);
+        mysqli_stmt_bind_param($stmt, "sssi",$param_name,$param_username, $param_password,$param_contact);
 
         // Set these parameters
+
+        $param_name = $name;
         $param_username = $username;
         $param_password = password_hash($password, PASSWORD_DEFAULT);
         $param_contact = $contact;
@@ -133,8 +143,8 @@ mysqli_close($conn);
         </div>
         <br><br>
         <form method="POST" action="">
-          <p class='input-container'><i class="fas fa-user user input-icons"></i><input class=signup-inputs type="text" placeholder="Username" required name="username"></p>
-          <!-- <p class='input-container'><i class="fas fa-envelope envelope input-icons"></i><input class=signup-inputs type="email" placeholder="Email" name="email" required></p> -->
+          <p class='input-container'><i class="fas fa-user user input-icons"></i><input class=signup-inputs type="text" placeholder="Name" required name="name"></p>
+          <p class='input-container'><i class="fas fa-envelope envelope input-icons"></i><input class=signup-inputs type="email" placeholder="Email" name="username" required></p>
           <p class='input-container'><i class="fas fa-phone input-icons"></i><input class=signup-inputs type="tel" placeholder="Contact Number" required name="contact"></p>
           <p class='input-container'><i class="fas fa-key key input-icons"></i><input class=signup-inputs type="password" placeholder="Password" required name="password"></p>
           <p class='input-container'><i class="fas fa-lock lock input-icons"></i><input class=signup-inputs type="password" placeholder="Confirm Password" required name="confirm_password" ></p>
