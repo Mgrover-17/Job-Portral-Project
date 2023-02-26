@@ -8,3 +8,5 @@ Project on Job-Portral
  
 
  Issues --> Login --> Welcome (Name of user who register) --> dont getting how to print a Name of particular user who register recentle 
+
+26/2/2023 --> Contact us Frontend Done.
