@@ -1,3 +1,18 @@
+<?php
+require_once "config.php";
+if(isset($_POST['SendMessage'])){
+  $fullName=$_POST['fullName'];
+  $email=$_POST['email'];
+  $message=$_POST['message'];
+
+  $stmt = $conn->prepare("INSERT INTO `contactus`(`fullName`, `email`, `message`) VALUES (?,?,?)");
+$stmt->bind_param("sss",$fullName,$email,$message);
+$stmt->execute();
+echo '<script type="text/javascript">
+       window.onload = function () { alert("Your Message Has been sent Successfully"); } 
+</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,22 +68,22 @@
           </div>
         </div>
         <div class="contactform">
-          <form>
+        <form method="POST">
             <h2>Send message</h2>
             <div class="inputBox">
-              <input type="text" required />
+              <input type="text" required name="fullName"/>
               <span>Full name</span>
             </div>
             <div class="inputBox">
-              <input type="email" required />
+              <input type="email" required name="email" />
               <span>Email</span>
             </div>
             <div class="inputBox">
-              <textarea required></textarea>
+              <textarea required name="message"></textarea>
               <span>Type Your Message</span>
             </div>
-            <button class="Sbutton">Send</button>
-          </form>
+            <button type="submit" name ="SendMessage" class="Sbutton">Send</button>
+          </form>
         </div>
       </div>
     </section>
