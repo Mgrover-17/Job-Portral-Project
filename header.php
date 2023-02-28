@@ -87,6 +87,6 @@
 <div class="sidebar">
   <a class="active" href="index.php">Jobs</a>
   <a href="jobs.php">Candidates Applied</a>
-  <a href="#contact">Contact</a>
+  <a href="contact.php">Contact</a>
   <a href="#about">About</a>
 </div>
