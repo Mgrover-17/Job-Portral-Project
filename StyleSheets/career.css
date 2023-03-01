@@ -1,0 +1,21 @@
+img{
+    background-image: linear-gradient(
+              rgba(4, 9, 30, 0.7),
+              rgba(4, 9, 30, 0.7)
+            ),
+            url('../images/jobApply.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+          }
+
+  .top-left {
+    position: absolute;
+    top:150px;
+    left: 60px;
+    color:white;
+  }
+
+body{
+background-repeat:no-repeat;
+}

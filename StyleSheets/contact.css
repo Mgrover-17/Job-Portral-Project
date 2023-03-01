@@ -17,8 +17,7 @@
         rgba(4, 9, 30, 0.7),
         rgba(4, 9, 30, 0.7)
       ),
-      url("contact.jpg");
-
+      url('../images/contact.jpg');
     font-size: 36px;
     font-weight: 500;
     color: rgb(239, 229, 234);

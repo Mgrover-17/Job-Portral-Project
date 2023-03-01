@@ -24,7 +24,7 @@ echo '<script type="text/javascript">
       src="https://kit.fontawesome.com/b8e0ff78ed.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="contact.css"/>
+    <link rel="stylesheet" href="StyleSheets\contact.css"/>
     
   </head>
   <body>

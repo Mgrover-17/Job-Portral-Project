@@ -13,4 +13,4 @@ Project on Job-Portral
 27/2/2023 --> About Us Page Created
 28/2/2023 -->ContactUs Backend Added
 01/3/2023 -->Home Page Created With AboutUs , Login , Contact , Services
-
+01/3/2023 -->Formatting Images and Css in Folders
