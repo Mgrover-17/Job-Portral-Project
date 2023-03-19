@@ -17,15 +17,26 @@
       <img src="images\JobLogo.png" alt="Job Logo">
      </div>
      <ul class="menu">
-        <li><a href="Home.php">Home</a></li>
+        <li><a href="Home2.php">Home</a></li>
         <li><a href="career.php">Jobs</a></li>
          <li><a href="#">Services</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
+
       <div class="search-box">
         <input type="text" placeholder="Search here...">
         <a href="#"><i class="fas fa-search"></i></a>
       </div>
+
+      <!-- Loged in User -->
+        <?php 
+        session_start();
+        echo "Welcome ".$_SESSION['username']; 
+           ?> 
+           <div class="avatar" style="border-radius:50%;background:linera-gradient(-45deg,#157,#c7a1ff);width:6%;">
+                <img src="images\user.jpeg"style="padding:0;width:100%;border-radius:30%;border:4px solid #161616;" />
+            </div> 
+      
    </div>
    </nav>
 
@@ -45,7 +56,8 @@
        </div>
        <div class="buttons">
    <a href="AboutUs.php"><button>About Us</button></a>
-   <a href="login.php"><button>Login</button></a>
+   <a href="index.php"><button>Post Job</button></a>
+   <a href="career.php"><button>Apply For Job</button></a>
  </div>
      </div>
     
@@ -61,6 +73,7 @@
     <a href="https://www.linkedin.com/in/naman-malhotra-54205423b/"><i class="fab fa-linkedin-in"></i></a>
     <a href="https://www.linkedin.com/in/manvi-grover-60305623b/"><i class="fab fa-linkedin-in"></i></a>
   </div>
+
  </header>
 </body>
 </html>

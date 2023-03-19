@@ -113,7 +113,7 @@ mysqli_close($conn);
     <title>Login / SignUp</title>
     <script src="https://kit.fontawesome.com/b8e0ff78ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="register.css"/>
+    <link rel="stylesheet" href="StyleSheets\register.css"/>
     
   </head>
   <body>

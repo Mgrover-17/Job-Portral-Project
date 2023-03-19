@@ -16,16 +16,8 @@
     <h1> Jobs Portral</h1>
     <h4>Best Jobs available matching your skills</h4>
   </div>
-  <div class="card m-4" style="width: 28rem;">
-  <!-- <div class="card-body">
-    <h5 class="card-title">Software Developer</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Microsoft</h6>
-    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, quis nam eum vitae quia totam dolorem alias, ab doloribus rerum magni eaque delectus iusto id? Hic ea ipsum nulla fugiat.</p>
-    <h6><b>Skills Required :</b> HTML,CSS,JavaScript and React</h6>
-    <h6><b>Job Location :</b> Delhi</h6>
-    <h6><b>CTC :</b> 8LPA</h6>
-</div> -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -61,21 +53,21 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
 
-<div class="row">
-<?php 
+  <div class="row " style="padding:2vh;">
+  <?php 
         require_once "config.php";
         $sql="SELECT cname,position,Jdesc,skills,CTC FROM jobs";
         $result=mysqli_query($conn,$sql);
         if($result->num_rows>0){
           while($rows=$result->fetch_assoc()){
             echo'
-            <div class="col-sm-6" >
-            <div class = "card" style="width: 16rem;">
+            <div class="col-sm-3" >
+            <div class = "card ">
             <div class="card-body " >
             <h5 class="card-title">'.$rows['position'].'</h5>
-            <h6 class="card-subtitle mb-2 text-muted">'.$rows['cname'].'</h6>
+            <h6 class="card-subtitle text-muted">'.$rows['cname'].'</h6>
             <p class="card-text">'.$rows['Jdesc'].'</p>
             <h6><b>Skills Required :</b>'.$rows['skills'].'</h6>
             <h6><b>CTC : </b>'.$rows['CTC'].'</h6>
@@ -83,7 +75,6 @@
             </div>
             </div>
             </div>';          }}
-          
           // Apllying for Job
           if(isset($_POST['apply'])){
             $Name=$_POST['Name'];
@@ -97,13 +88,12 @@
             
             // $stmt = "INSERT INTO `jobapplicants`(`Name`, `qualification`, `applyfor`, `Year_passout`) VALUES ('$Name',$qualification','$applyfor','$Year_passout')"
             // mysqli_query($conn,$stmt);
-            echo "Apply for Job successfully";
+            echo '<script type="text/javascript">
+            window.onload = function () { alert("You Successfully applied for job"); } 
+            </script>';
           }
-          ?>
-          </div>
-          </div>
-          </div>  
-          </div>
+          ?>        
+</div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

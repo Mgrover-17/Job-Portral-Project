@@ -3,11 +3,11 @@
 session_start();
 
 // check if the user is already logged in
-if(isset($_SESSION['username']))
-{
-    header("location: index.php");
-    exit;
-}
+// if(isset($_SESSION['username']))
+// {
+//     header("location: Home2.php");
+//     exit;
+// }
 require_once "config.php";
 
 $username = $password = "";
@@ -48,7 +48,7 @@ if(empty($err))
                             $_SESSION["loggedin"] = true;
 
                             //Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: Home2.php");
                             }}}}}}?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,18 +82,18 @@ if(empty($err))
         <div class="avatar">
             <img src="images\user.jpeg" />
         </div>
-        <h2>Login</h2>
+        <h2>Login To Your Account</h2>
 
     <!-- Yaha tohdi c gadbad hai yaha problem horri bss iska samjh nahi arra ki kesse krenga name print according to regiseter and kon login kra -->
-        <?php
-        $sql="Select name FROM users";
-        $result = mysqli_query($conn,$sql);
+         <?php
+        // $sql="Select name FROM users";
+        // $result = mysqli_query($conn,$sql);
 
-        if($result->num_rows>0){
-            while($rows=$result->fetch_assoc()){
-          echo '
-        <h3>Welcome '.$rows['name'].'</h3> ';
-            }}
+        // if($result->num_rows>0){
+        //     while($rows=$result->fetch_assoc()){
+        //   echo '
+        // <h3>Welcome '.$rows['name'].'</h3> ';
+        //     }}
         ?>
         
         <form  class="login-form" method="POST">
